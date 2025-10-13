@@ -1,0 +1,152 @@
+/* src/components/Footer.css */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Lato&display=swap');
+
+.footer {
+  background-color: #0c0c0c;
+  color: #ccc;
+  padding: 80px 6% 20px 6%;
+  font-family: 'Lato', sans-serif;
+  border-top: 3px solid #DAA520;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px; /* Ensures columns don't get too squeezed */
+}
+
+.footer-col-title {
+  font-family: 'Cinzel', serif;
+  color: #DAA520;
+  font-size: 1.3rem;
+  margin-bottom: 25px;
+  position: relative;
+}
+/* Underline effect for titles */
+.footer-col-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 50px;
+  height: 2px;
+  background-color: #DAA520;
+  opacity: 0.5;
+}
+
+/* --- Column 1: About --- */
+.footer-logo {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.footer-about {
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.social-icons .social-icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #DAA520;
+  border-radius: 50%;
+  color: #DAA520;
+  margin-right: 15px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.social-icons .social-icon:hover {
+  background-color: #DAA520;
+  color: #0c0c0c;
+}
+
+/* --- Column 2: Links --- */
+.links-col ul {
+  list-style: none;
+  padding: 0;
+}
+.links-col ul li a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 12px;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+}
+.links-col ul li a:hover {
+  color: #DAA520;
+  padding-left: 5px;
+}
+
+/* --- Column 3: Contact --- */
+.contact-col p {
+  margin: 0 0 12px 0;
+}
+
+/* --- Column 4: Newsletter --- */
+.newsletter-form {
+  display: flex;
+  margin-top: 15px;
+}
+.newsletter-form input {
+  flex-grow: 1;
+  border: 1px solid #DAA520;
+  background: transparent;
+  padding: 10px;
+  color: #fff;
+  border-radius: 3px 0 0 3px;
+}
+.newsletter-form button {
+  background-color: #DAA520;
+  border: none;
+  color: #0c0c0c;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 0 3px 3px 0;
+  transition: background-color 0.3s ease;
+}
+.newsletter-form button:hover {
+  background-color: #fff;
+}
+
+/* --- Footer Bottom --- */
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.9rem;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .footer-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-col {
+    min-width: 100%;
+  }
+  .footer-col-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .newsletter-form {
+    justify-content: center;
+  }
+}

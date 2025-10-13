@@ -1,0 +1,229 @@
+/* src/components/OurStory.css */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
+
+.our-story-section-new {
+    display: flex;
+    color: #fff;
+    overflow: hidden;
+    min-height: 90vh;
+    background-image: url('/img/storybg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.story-left-column {
+    flex: 1;
+    padding: 80px 6%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.story-top-accent {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #DAA520, transparent);
+}
+
+.story-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #DAA520;
+    margin-bottom: 20px;
+}
+
+.story-dots {
+    display: grid;
+    grid-template-columns: repeat(3, 8px);
+    gap: 4px;
+    margin-bottom: 40px;
+}
+
+.story-dots span {
+    width: 4px;
+    height: 4px;
+    background-color: #DAA520;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.mission-statement h2,
+.feature-title {
+    display: flex;
+    align-items: center;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.icon-circle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #DAA520;
+    border-radius: 50%;
+    margin-right: 15px;
+    font-size: 0.8rem;
+    color: #DAA520;
+}
+
+.mission-statement p {
+    font-family: 'Lato', sans-serif;
+    color: #ccc;
+    line-height: 1.8;
+    padding-left: 43px;
+    margin-bottom: 40px;
+}
+
+.story-features {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+}
+
+.feature-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.feature-number {
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    color: #DAA520;
+    font-size: 1.2rem;
+}
+
+.story-right-column {
+    flex: 1.2;
+    position: relative;
+}
+
+.story-image-collage {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.collage-img-1,
+.collage-img-2 {
+    position: absolute;
+    object-fit: cover;
+    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.collage-img-1 {
+    width: 40%;
+  
+    top: 7%;
+    right: 10%;
+    z-index: 2;
+    border: 1px solid #DAA520;
+    border-radius: 12px;
+}
+
+.collage-img-2 {
+    width: 43%;
+
+    bottom: 5%;
+    left: 5%;
+    border: 1px solid #DAA520;
+    border-radius: 12px;
+    z-index: 1;
+}
+
+.story-bottom-accent {
+    position: absolute;
+    bottom: 20px;
+    right: -20px;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #DAA520;
+    transform: rotate(45deg);
+    opacity: 0.3;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .our-story-section-new {
+        flex-direction: column;
+    }
+
+    .story-right-column {
+        display: none;
+    }
+
+    /* --- यहाँ मुख्य बदलाव हैं --- */
+    .story-image-collage {
+        height: 90%;
+        /* कंटेनर को हाइट दें */
+        width: 90%;
+        /* कंटेनर को विड्थ दें */
+    }
+
+    .collage-img-1,
+    .collage-img-2 {
+        position: relative;
+        /* Absolute से Relative करें */
+        width: 75%;
+        /* विड्थ एडजस्ट करें */
+        height: auto;
+        /* Absolute वाली पोजिशनिंग हटा दें */
+        top: auto;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        display: block;
+    }
+
+    .collage-img-1 {
+        margin: 0 auto;
+        /* पहली इमेज को सेंटर करें */
+        z-index: 2;
+    }
+
+    .collage-img-2 {
+        margin: -35% auto 0 auto;
+        /* दूसरी इमेज को ऊपर खींचें और सेंटर करें */
+        z-index: 1;
+    }
+
+    .story-bottom-accent {
+        display: none;
+        /* मोबाइल पर एक्सेंट को छिपा दें */
+    }
+}
+
+@media (max-width: 576px) {
+    .story-left-column {
+        padding: 60px 5%;
+    }
+
+    .story-main-title {
+        font-size: 2.8rem;
+    }
+
+    .story-right-column {
+        min-height: 400px;
+        /* मोबाइल पर हाइट और कम करें */
+    }
+
+    .collage-img-1,
+    .collage-img-2 {
+        width: 80%;
+        /* मोबाइल पर इमेज थोड़ी और बड़ी करें */
+    }
+
+    .collage-img-2 {
+        margin-top: -40%;
+        /* ओवरलैप को थोड़ा और बढ़ाएं */
+    }
+}

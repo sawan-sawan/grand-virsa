@@ -1,0 +1,162 @@
+/* src/components/SpecialOffers.css */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Lato&display=swap');
+
+.offers-section {
+  padding: 100px 6%;
+  background-image: url('/public/img/menubg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.offers-container {
+  display: flex;
+  gap: 60px;
+  /* दोनों कॉलम के बीच में जगह */
+  align-items: center;
+}
+
+/* --- Left Column: Image Collage --- */
+.offers-image-collage {
+  flex: 1.2;
+  /* इमेज वाले हिस्से को थोड़ी ज़्यादा जगह दें */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px;
+}
+
+.offers-image-collage img {
+  width: 23vw;
+  height: 30vh;
+  object-fit: cover;
+}
+
+/* --- Right Column: Content --- */
+.offers-content {
+  flex: 1;
+  /* कंटेंट वाले हिस्से को थोड़ी कम जगह दें */
+}
+
+.offers-subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #DAA520;
+  margin: 0;
+}
+
+.offers-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.title-dot {
+  width: 6px;
+  height: 6px;
+  background-color: #DAA520;
+  border-radius: 50%;
+  margin-bottom: 40px;
+}
+
+.offers-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.offer-item {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  /* आइटम्स के बीच में लाइन */
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.offer-item:last-child {
+  border-bottom: none;
+  /* आखिरी आइटम के नीचे लाइन न हो */
+  margin-bottom: 0;
+}
+
+.offer-thumb {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.offer-details {
+  flex-grow: 1;
+  /* बीच के हिस्से को पूरी जगह दें */
+}
+
+.offer-details h4 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #ffffff;
+  margin: 0 0 5px 0;
+}
+
+.offer-details p {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  color: #d1d1d1;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.offer-price {
+  font-family: 'Cinzel', serif;
+  font-size: 1.5rem;
+  color: #DAA520;
+  font-weight: 700;
+  padding-left: 20px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+  .offers-container {
+    flex-direction: column;
+    /* लेआउट को एक के नीचे एक कर दें */
+    gap: 50px;
+  }
+
+  .offers-image-collage img {
+    width: 44vw;
+    height: 30vh;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 480px) {
+  .offers-image-collage {
+    gap: 10px;
+  }
+
+  .offer-item {
+    flex-wrap: wrap;
+    /* छोटी स्क्रीन पर कीमत को नीचे ले जाएं */
+  }
+
+  .offer-details {
+    flex-basis: 100%;
+    /* डिटेल्स को पूरी चौड़ाई दें */
+    margin-top: 15px;
+    /* ऊपर से थोड़ी जगह */
+    order: 3;
+    /* इसे सबसे नीचे रखें */
+  }
+
+  .offer-thumb {
+    order: 1;
+  }
+
+  .offer-price {
+    order: 2;
+    margin-left: auto;
+    /* कीमत को दाईं ओर धकेलें */
+  }
+}

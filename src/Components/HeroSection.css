@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Great+Vibes&family=Lato&display=swap');
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, rgba(0, 0, 0, 0) 100%),
+        url('https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/herobg_gmuqsx.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content-wrapper {
+    padding-left: 8%;
+    max-width: 800px;
+    text-align: left;
+    z-index: 2;
+}
+
+.hero-new-subtitle {
+    font-family: 'Great Vibes', cursive;
+    font-size: 10rem;
+    color: #DAA520;
+    margin-bottom: -100px;
+    font-weight: 400;
+}
+
+/* --- "Grand Virsa" Styling --- */
+.hero-new-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 7rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.1;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero-new-tagline {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    letter-spacing: 2px;
+}
+
+.hero-presented-by {
+    position: absolute;
+    bottom: 30px;
+    right: 40px;
+    color: #ccc;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    z-index: 2;
+}
+
+.hero-presented-by strong {
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .hero-new-subtitle {
+        font-size: 6rem;
+        margin-bottom: -80px;
+        text-align: center;
+    }
+
+    .hero-new-title {
+        font-size: 6rem;
+        text-align: center;
+    }
+
+    .hero-new-tagline {
+        font-size: 1.1rem;
+        text-align: center;
+    }
+
+    .hero-section {
+
+        justify-content: space-around;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content-wrapper {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .hero-new-subtitle {
+        font-size: 5rem;
+        margin-bottom: -70px;
+    }
+
+    .hero-new-title {
+        font-size: 3.8rem;
+    }
+
+    .hero-new-tagline {
+        font-size: 1rem;
+    }
+
+    .hero-presented-by {
+        font-size: 0.8rem;
+        right: 20px;
+        bottom: 20px;
+    }
+}
