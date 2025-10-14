@@ -1,9 +1,8 @@
-/* src/components/SpecialOffers.css */
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Lato&display=swap');
 
 .offers-section {
   padding: 100px 6%;
-  background-image: url('/public/img/menubg.jpg');
+  background-image: url('/img/menubg.jpg');
   background-size: cover;
   background-position: center;
 }
@@ -14,24 +13,23 @@
   align-items: center;
 }
 
-/* --- Left Column: Single Image (UPDATED) --- */
+/* --- Left Column: Static Image --- */
 .offer-main-image-wrapper {
   flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* इमेज के लिए नई स्टाइल */
-.offer-main-image {
-  width: 100%;
-  height: 75vh; /* आपकी ज़रूरत के अनुसार ऊंचाई 75vh कर दी गई है */
-  object-fit: cover; /* यह इमेज को बिना बिगाड़े कंटेनर में फिट करेगा */
+.static-offer-image {
+  width: 68%;
+  height: auto;
+  max-height: 65vh;
+  object-fit: cover;
   border-radius: 10px;
-  padding: 1px 1px 1px 1px ;
-  border: 1px solid #DAA520;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* --- Right Column: Content (No changes here) --- */
+/* --- Right Column: Content --- */
 .offers-content {
   flex: 1;
 }
@@ -119,15 +117,15 @@
     flex-direction: column;
     gap: 50px;
   }
-  
+
   .offer-main-image-wrapper {
-      width: 100%;
-      max-width: 500px; 
+    width: 100%;
+    max-width: 500px;
   }
 
-  /* टैबलेट पर इमेज की ऊंचाई कम की गई है ताकि लेआउट सही दिखे */
-  .offer-main-image {
-    height: 50vh; 
+  .static-offer-image {
+    width: 75%;
+    max-height: 45vh;
   }
 }
 
@@ -150,9 +148,9 @@
     order: 2;
     margin-left: auto;
   }
-  
-  /* मोबाइल पर इमेज की ऊंचाई और कम की गई है */
-  .offer-main-image {
-    height: 40vh;
+
+  .static-offer-image {
+    width: 65%;
+    max-height: 35vh;
   }
 }

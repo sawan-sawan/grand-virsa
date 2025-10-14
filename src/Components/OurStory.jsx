@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './OurStory.css';
-// रिसॉर्ट और फ़ूड थीम के लिए नए आइकन्स
 import { IoRestaurantOutline, IoBedOutline, IoLeafOutline } from 'react-icons/io5';
 
 const OurStory = () => {
-  // रिसॉर्ट और फ़ूड से संबंधित नया फ़ीचर डेटा
+  const imageRef = useRef(null);
+  const [animate, setAnimate] = useState(false);
+
   const features = [
     {
       icon: <IoRestaurantOutline />,
@@ -23,11 +24,43 @@ const OurStory = () => {
     }
   ];
 
+  useEffect(() => {
+    const hasAnimated = sessionStorage.getItem('ourStoryAnimated');
+
+    if (hasAnimated) {
+      setAnimate(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setAnimate(true);
+          sessionStorage.setItem('ourStoryAnimated', 'true');
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (imageRef.current) {
+      observer.observe(imageRef.current);
+    }
+
+    return () => {
+      if (imageRef.current) observer.unobserve(imageRef.current);
+    };
+  }, []);
+
   return (
     <section id='our-story' className="our-story-section-new">
       <div className="story-container">
+        
         {/* Left Column for the Image */}
-        <div className="story-image-wrapper">
+        <div
+          ref={imageRef}
+          className={`story-image-wrapper ${animate ? 'slide-in' : ''}`}
+        >
           <img 
             src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760437913/Untitled_design_2_fa35km.png" 
             alt="Resort Dining View" 
@@ -45,7 +78,6 @@ const OurStory = () => {
           </div>
           
           <div className="story-features-section">
-           
             <div className="features-list">
               {features.map((feature, index) => (
                 <div className="feature-item-new" key={index}>

@@ -5,17 +5,17 @@ const SpecialOffers = () => {
   return (
     <section id="menu" className="offers-section">
       <div className="offers-container">
-        {/* Left Column: Single responsive image */}
+        
+        {/* --- Left Side: Static Image (No Slider) --- */}
         <div className="offer-main-image-wrapper">
-          {/* सिर्फ एक इमेज रखी गई है, आप src को बदल सकते हैं */}
           <img 
-            src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760437730/Untitled_design_3_jtaa0c.png" 
-            alt="Special Offer Dish"
-            className="offer-main-image"
+            src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760441248/Untitled_design_5_rsc0be.png" 
+            alt="Special Offer" 
+            className="static-offer-image"
           />
         </div>
 
-        {/* Right Column: Content (No changes here) */}
+        {/* --- Right Side: Offers Content --- */}
         <div className="offers-content">
           <h3 className="offers-subtitle">From the menu</h3>
           <h2 className="offers-title">SPECIAL OFFERS</h2>

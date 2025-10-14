@@ -127,6 +127,18 @@
   font-size: 0.9rem;
   line-height: 1.5;
 }
+/* --- Image Slide Animation (runs once per reload) --- */
+.story-image-wrapper {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.3s ease-out;
+}
+
+.story-image-wrapper.slide-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 
 
 /* --- Responsive Design --- */
