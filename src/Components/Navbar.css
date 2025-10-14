@@ -1,195 +1,239 @@
 /* src/components/Navbar.css */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Lato:wght@400&display=swap');
 
-/* --- Global Styles --- */
-.no-scroll {
-  overflow: hidden;
-}
-
-/* --- Background Overlay for Mobile Menu --- */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998; /* Navbar से नीचे, कंटेंट से ऊपर */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.4s ease, visibility 0.4s ease;
-}
-.overlay.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-/* --- Main Navbar Styling --- */
+/* --- Base Navbar Styling --- */
 .navbar {
+  background: transparent;
   height: 90px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: transparent;
-  z-index: 1000; /* सबसे ऊपर */
-  transition: background-color 0.4s ease-out, backdrop-filter 0.4s ease-out, box-shadow 0.4s ease-out;
+  z-index: 999;
+  transition: background-color 0.4s ease, backdrop-filter 0.4s ease;
 }
+
 .navbar.scrolled {
-  background-color: rgba(17, 17, 17, 0.9);
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border-bottom: 2px solid #DAA520;
+  background-color: rgba(10, 10, 10, 0.8);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
+
 .navbar-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  max-width: 1300px;
-  padding: 0 24px;
-}
-.navbar-logo img {
-  height: 75px;
-  cursor: pointer;
-}
-
-/* --- Desktop Menu --- */
-.nav-menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-}
-.nav-item {
   height: 90px;
-  display: flex;
-  align-items: center;
+  z-index: 1;
+  width: 100%;
+  padding: 0 50px;
+  max-width: 1400px;
 }
-.nav-link {
-  color: #fff;
-  font-family: 'Cinzel', serif;
+
+.navbar-logo {
+  justify-self: flex-start;
+  cursor: pointer;
   display: flex;
   align-items: center;
-  text-decoration: none;
-  padding: 0 1.5rem;
   height: 100%;
-  cursor: pointer;
+}
+
+.navbar-logo img {
+  height: 60px; /* Adjust logo size */
+  width: auto;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover img {
+  transform: scale(1.05);
+}
+
+
+/* --- MODERN FULL-SCREEN MENU WRAPPER --- */
+.nav-menu-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(15, 15, 15, 0.97); /* Dark, slightly transparent BG */
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  /* Hidden by default */
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.nav-menu-wrapper.open {
+  /* Shown when active */
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-menu {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 1rem 0;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* --- Staggered Animation for Links --- */
+.nav-menu-wrapper.open .nav-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-menu-wrapper.open .nav-item:nth-child(1) { transition-delay: 0.25s; }
+.nav-menu-wrapper.open .nav-item:nth-child(2) { transition-delay: 0.35s; }
+.nav-menu-wrapper.open .nav-item:nth-child(3) { transition-delay: 0.45s; }
+.nav-menu-wrapper.open .nav-item:nth-child(4) { transition-delay: 0.55s; }
+.nav-menu-wrapper.open .nav-item:nth-child(5) { transition-delay: 0.65s; }
+
+.nav-link {
+  color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem; /* Larger font for full-screen menu */
+  letter-spacing: 2px;
   position: relative;
-  transition: color 0.3s ease-out;
+  transition: color 0.3s ease;
 }
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 25px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 2px;
+
+.nav-link:hover {
+  color: #DAA520; /* Gold color on hover */
+}
+
+.nav-icon {
+  margin-right: 12px;
+  font-size: 1.6rem;
+}
+
+/* --- NEW: Extras section (CTA and Socials) --- */
+.nav-extras {
+  margin-top: 40px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out 0.8s, transform 0.5s ease-out 0.8s;
+}
+
+.nav-menu-wrapper.open .nav-extras {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.nav-cta-button {
   background-color: #DAA520;
-  transition: width 0.4s ease-in-out;
-}
-.nav-link:hover { color: #DAA520; }
-.nav-link:hover::after { width: 60%; }
-.contact-link {
-  background: #DAA520;
   color: #111;
-  padding: 8px 20px !important;
+  border: none;
+  padding: 12px 30px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
   border-radius: 5px;
-  height: auto;
-  margin-left: 1.5rem;
-  transition: all 0.3s ease;
-}
-.contact-link:hover { background: #fff; color: #111; }
-.contact-link:hover::after { width: 0; }
-.nav-icon { display: none; }
-
-
-/* --- Hamburger Icon (Mobile) --- */
-.hamburger {
-  display: none;
   cursor: pointer;
-  z-index: 1001; /* मेनू के ऊपर */
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.line {
-  width: 30px;
-  height: 3px;
-  background-color: #DAA520;
-  margin: 6px 0;
-  transition: all 0.4s ease-in-out;
-  border-radius: 5px;
+
+.nav-cta-button:hover {
+  background-color: #f0c34f;
+  transform: scale(1.05);
 }
-.hamburger.open .line1 { transform: rotate(-45deg) translate(-8px, 7px); }
-.hamburger.open .line2 { opacity: 0; }
-.hamburger.open .line3 { transform: rotate(45deg) translate(-8px, -7px); }
 
+.nav-socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 25px;
+}
 
-/* --- Responsive Mobile Menu (New Design) --- */
+.social-icon {
+  color: #ccc;
+  font-size: 1.5rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-icon:hover {
+  color: #DAA520;
+  transform: translateY(-3px);
+}
+
+/* --- ANIMATED HAMBURGER ICON (Burger to X) --- */
+.hamburger {
+  display: none; /* Hidden on desktop */
+}
+
 @media screen and (max-width: 960px) {
+  /* Hide desktop menu items */
+  .navbar-container > .nav-menu {
+    display: none;
+  }
+  
   .hamburger {
     display: block;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 1000; /* Must be above the menu wrapper */
+  }
+
+  .line {
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
   }
   
-  /* The menu itself */
-  .nav-menu {
-    flex-direction: column;
-    justify-content: flex-start;
-    padding-top: 120px; /* ऊपर से स्पेस */
-    position: fixed;
-    top: -20px;
-    right: -100%; /* स्क्रीन के दाईं ओर छिपा हुआ */
-    width: 300px; 
-    height: 100vh;
-    background: #1a1a1a;
-    box-shadow: -5px 0px 15px rgba(0, 0, 0, 0.2);
-    list-style: none;
-    transition: right 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+  /* When menu is open, hamburger lines are gold for visibility */
+  .navbar.menu-open .line {
+      background-color: #DAA520;
   }
-.navbar{
-    height: 70px;
+
+  .line1 { top: 0; }
+  .line2 { top: 50%; transform: translateY(-50%); }
+  .line3 { bottom: 0; }
+
+  /* Animation to 'X' */
+  .hamburger.open .line1 {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .hamburger.open .line2 {
+    opacity: 0;
+  }
+  .hamburger.open .line3 {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
 }
-.navbar-logo img{
-    height: 55px;
-}
-  .nav-menu.open {
-    right: 0; 
-  }
-  .nav-item {
-    width: 100%;
-    height: auto; 
-    margin-bottom: 10px;
-  }
 
-  .nav-link {
-    font-size: 1.2rem; 
-    padding: 15px 30px;
-    width: 100%;
-    justify-content: flex-start; 
-    color: #f0f0f0;
-  }
-
-  .nav-link:hover {
-    color: #DAA520;
-    background-color: rgba(255, 255, 255, 0.05);
-  }
-  
-  .nav-link::after { display: none; }
-
-  .nav-icon {
-    display: inline-block;
-    margin-right: 15px; 
-    font-size: 1.4rem; 
-    color: #DAA520;
-  }
-
-  .contact-link {
-    margin: 30px 20px 0 20px;
-    width: calc(100% - 40px);
-    justify-content: center;
-    padding: 12px 20px !important;
-  }
+/* --- Prevent body scroll when menu is open --- */
+.no-scroll {
+  overflow: hidden;
 }

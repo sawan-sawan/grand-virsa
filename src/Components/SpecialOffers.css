@@ -5,6 +5,7 @@
   background-image: url('/img/menubg.jpg');
   background-size: cover;
   background-position: center;
+  overflow: hidden; /* Ensures sliding elements don't show before animation */
 }
 
 .offers-container {
@@ -111,18 +112,71 @@
   padding-left: 20px;
 }
 
-/* --- Responsive Design --- */
+/* ======================================================= */
+/* ===== NEW ANIMATION STYLES (Copied from OurStory) ===== */
+/* ======================================================= */
+
+/* Main container ke liye initial state (hidden) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s ease-out;
+}
+
+/* Jab 'active' class lagti hai, container view mein aata hai */
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Image ke liye initial state */
+.offer-main-image-wrapper {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.3s ease-out;
+}
+
+/* Jab container active hota hai, image slide-in hoti hai */
+.reveal-up.active .offer-main-image-wrapper {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.15s;
+}
+
+/* Offer items ke liye initial state */
+.offer-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+/* Jab container active hota hai, to offer items ek ke baad ek aate hain */
+.reveal-up.active .offer-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-up.active .offer-item:nth-child(1) {
+  transition-delay: 0.25s;
+}
+.reveal-up.active .offer-item:nth-child(2) {
+  transition-delay: 0.45s;
+}
+.reveal-up.active .offer-item:nth-child(3) {
+  transition-delay: 0.65s;
+}
+
+
+/* --- Responsive Design (No changes here) --- */
 @media (max-width: 992px) {
   .offers-container {
     flex-direction: column;
     gap: 50px;
   }
-
   .offer-main-image-wrapper {
     width: 100%;
     max-width: 500px;
   }
-
   .static-offer-image {
     width: 75%;
     max-height: 45vh;
@@ -133,22 +187,18 @@
   .offer-item {
     flex-wrap: wrap;
   }
-
   .offer-details {
     flex-basis: 100%;
     margin-top: 15px;
     order: 3;
   }
-
   .offer-thumb {
     order: 1;
   }
-
   .offer-price {
     order: 2;
     margin-left: auto;
   }
-
   .static-offer-image {
     width: 65%;
     max-height: 35vh;

@@ -16,9 +16,10 @@ const ContactSection = () => {
         <div className="contact-accent-squares"></div>
 
         <h1 className="contact-title">Join Us Today!</h1>
-        <p className="contact-description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-        </p>
+       <p className="contact-description">
+  Grand Virsa welcomes you to be a part of our vibrant family! Located on NH 44, GT Road, Phillaur, Punjab, our heritage-inspired haveli offers a unique blend of tradition, comfort, and luxury. Whether you wish to collaborate, host an event, or simply experience Punjabi hospitality at its finest, we invite you to join hands with us. Let's create timeless memories together at Grand Virsa.
+</p>
+
         
         <ul className="contact-list">
           <li className="contact-item">
@@ -31,7 +32,7 @@ const ContactSection = () => {
           </li>
           <li className="contact-item">
             <span className="contact-icon"><FaPhoneAlt /></span>
-            <span>+123-456-7890</span>
+            <span>+91 8078-000001</span>
           </li>
         </ul>
       </div>

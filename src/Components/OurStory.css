@@ -138,6 +138,55 @@
   opacity: 1;
   transform: translateX(0);
 }
+/* --- Bottom to Top Scroll Animation on inner container (fixed) --- */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s ease;
+}
+
+/* When active, container moves up into view */
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ensure image slide-in still works and is visible */
+.story-image-wrapper {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.3s ease-out;
+}
+
+/* If container is active, also show image with a slight delay for nice sequence */
+.reveal-up.active .story-image-wrapper {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.15s;
+}
+
+/* Optional: stagger feature items when container becomes active */
+.reveal-up.active .feature-item-new {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.feature-item-new {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal-up.active .feature-item-new:nth-child(1) {
+  transition-delay: 0.25s;
+}
+.reveal-up.active .feature-item-new:nth-child(2) {
+  transition-delay: 0.45s;
+}
+.reveal-up.active .feature-item-new:nth-child(3) {
+  transition-delay: 0.65s;
+}
+
 
 
 

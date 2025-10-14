@@ -3,64 +3,58 @@ import './OurStory.css';
 import { IoRestaurantOutline, IoBedOutline, IoLeafOutline } from 'react-icons/io5';
 
 const OurStory = () => {
-  const imageRef = useRef(null);
-  const [animate, setAnimate] = useState(false);
+  const sectionRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const features = [
     {
       icon: <IoRestaurantOutline />,
       title: 'Gourmet Dining',
-      description: 'Savor exquisite dishes prepared by our master chefs using fresh, locally-sourced ingredients.'
+      description:
+        'Savor exquisite dishes prepared by our master chefs using fresh, locally-sourced ingredients.'
     },
     {
       icon: <IoBedOutline />,
       title: 'Luxurious Stays',
-      description: 'Relax in our elegantly designed rooms and suites, each offering stunning views and premium comfort.'
+      description:
+        'Relax in our elegantly designed rooms and suites, each offering stunning views and premium comfort.'
     },
     {
       icon: <IoLeafOutline />,
       title: 'Natural Serenity',
-      description: 'Escape the everyday and immerse yourself in the tranquil beauty of our lush, natural surroundings.'
+      description:
+        'Escape the everyday and immerse yourself in the tranquil beauty of our lush, natural surroundings.'
     }
   ];
 
   useEffect(() => {
-    const hasAnimated = sessionStorage.getItem('ourStoryAnimated');
-
-    if (hasAnimated) {
-      setAnimate(true);
-      return;
-    }
-
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setAnimate(true);
-          sessionStorage.setItem('ourStoryAnimated', 'true');
-          observer.unobserve(entry.target);
+          setIsVisible(true);
+          observer.disconnect();
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.2 }
     );
 
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
     }
 
-    return () => {
-      if (imageRef.current) observer.unobserve(imageRef.current);
-    };
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <section id='our-story' className="our-story-section-new">
-      <div className="story-container">
-        
+    <section
+      id="our-story"
+      ref={sectionRef}
+      className="our-story-section-new"
+    >
+      {/* animate the inner container instead of the whole section */}
+      <div className={`story-container reveal-up ${isVisible ? 'active' : ''}`}>
         {/* Left Column for the Image */}
-        <div
-          ref={imageRef}
-          className={`story-image-wrapper ${animate ? 'slide-in' : ''}`}
-        >
+        <div className={`story-image-wrapper slide-in`}>
           <img 
             src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760437913/Untitled_design_2_fa35km.png" 
             alt="Resort Dining View" 

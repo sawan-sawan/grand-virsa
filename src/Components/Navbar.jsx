@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-// 🎯 Updated icons for better matching
-import { FaHome } from 'react-icons/fa';
-import { GiChefToque } from 'react-icons/gi'; // For "Our Story" (chef/restaurant story)
-import { MdRestaurantMenu } from 'react-icons/md'; // For "Menu"
-import { GiPartyPopper } from 'react-icons/gi'; // For "Catering"
-import { IoIosMail } from 'react-icons/io'; // For "Contact"
+// --- Icons ---
+import { FaHome, FaFacebookF, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { GiChefToque, GiPartyPopper } from 'react-icons/gi';
+import { MdRestaurantMenu } from 'react-icons/md';
+import { IoIosMail } from 'react-icons/io';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +15,7 @@ const Navbar = () => {
     setIsOpen(!isOpen);
   };
   
+  // Body scroll lock logic
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('no-scroll');
@@ -24,6 +24,7 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+  // Navbar background change on scroll
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 80);
@@ -32,7 +33,7 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // --- Smooth scroll to section ---
+  // Smooth scroll logic
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
@@ -47,6 +48,7 @@ const Navbar = () => {
       });
     }
 
+    // Close menu after clicking a link
     if (isOpen) {
       toggleMenu();
     }
@@ -54,11 +56,10 @@ const Navbar = () => {
 
   return (
     <>
-      <div className={`overlay ${isOpen ? 'show' : ''}`} onClick={toggleMenu}></div>
-
-      <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      {/* Overlay is now part of the nav-menu itself for a cleaner effect */}
+      <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
         <div className="navbar-container">
-          <a href="/" className="navbar-logo">
+          <a href="#home" className="navbar-logo" onClick={(e) => handleScrollTo(e, 'home')}>
             <img 
               src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/logo_iogna6.png" 
               alt="Grand Virsa Logo" 
@@ -71,38 +72,47 @@ const Navbar = () => {
             <div className="line line3"></div>
           </div>
           
-          {/* --- Navigation Menu --- */}
-          <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
-            <li className="nav-item">
-              <a href="#home" className="nav-link" onClick={(e) => handleScrollTo(e, 'home')}>
-                <FaHome className="nav-icon" /> Home
-              </a>
-            </li>
+          {/* --- Navigation Menu (MODERNIZED) --- */}
+          <div className={`nav-menu-wrapper ${isOpen ? 'open' : ''}`}>
+            <ul className="nav-menu">
+              <li className="nav-item">
+                <a href="#home" className="nav-link" onClick={(e) => handleScrollTo(e, 'home')}>
+                  <FaHome className="nav-icon" /> Home
+                </a>
+              </li>
+         
+              <li className="nav-item">
+                <a href="#menu" className="nav-link" onClick={(e) => handleScrollTo(e, 'menu')}>
+                  <MdRestaurantMenu className="nav-icon" /> Menu
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#catering" className="nav-link" onClick={(e) => handleScrollTo(e, 'catering')}>
+                  <GiPartyPopper className="nav-icon" /> Catering
+                </a>
+              </li>
+                   <li className="nav-item">
+                <a href="#our-story" className="nav-link" onClick={(e) => handleScrollTo(e, 'our-story')}>
+                  <GiChefToque className="nav-icon" /> Our Story
+                </a>
+              </li>
+              <li className="nav-item">
+                <a href="#contact" className="nav-link" onClick={(e) => handleScrollTo(e, 'contact')}>
+                  <IoIosMail className="nav-icon" /> Contact
+                </a>
+              </li>
+            </ul>
 
-            <li className="nav-item">
-              <a href="#our-story" className="nav-link" onClick={(e) => handleScrollTo(e, 'our-story')}>
-                <GiChefToque className="nav-icon" /> Our Story
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a href="#menu" className="nav-link" onClick={(e) => handleScrollTo(e, 'menu')}>
-                <MdRestaurantMenu className="nav-icon" /> Menu
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a href="#catering" className="nav-link" onClick={(e) => handleScrollTo(e, 'catering')}>
-                <GiPartyPopper className="nav-icon" /> Catering
-              </a>
-            </li>
-
-            <li className="nav-item">
-              <a href="#contact" className="nav-link contact-link" onClick={(e) => handleScrollTo(e, 'contact')}>
-                <IoIosMail className="nav-icon" /> Contact
-              </a>
-            </li>
-          </ul>
+            {/* --- NEW: CTA Button and Social Links --- */}
+            <div className="nav-extras">
+              <button className="nav-cta-button">Book a Table</button>
+              <div className="nav-socials">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon"><FaFacebookF /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon"><FaInstagram /></a>
+                <a href="https://wa.me/YOUR_NUMBER" target="_blank" rel="noopener noreferrer" className="social-icon"><FaWhatsapp /></a>
+              </div>
+            </div>
+          </div>
         </div>
       </nav>
     </>

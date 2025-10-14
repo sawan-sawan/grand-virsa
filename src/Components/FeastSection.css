@@ -21,20 +21,10 @@
 .feast-content {
     max-width: 800px;
     z-index: 2;
-    animation: fadeIn 1.5s ease-in-out;
+    /* Purani animation yahan se hata di gayi hai */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* Purana @keyframes fadeIn bhi hata diya gaya hai */
 
 .feast-subtitle {
     font-family: 'Great Vibes', cursive;
@@ -73,7 +63,51 @@
     width: 40px;
     height: auto;
     margin: 0 20px;
+}
 
+/* ================================== */
+/* ===== NEW SCROLL ANIMATION ===== */
+/* ================================== */
+
+/* Main container ke liye initial state (hidden) */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+/* Jab 'active' class lagti hai, container view mein aata hai */
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Elements ke liye initial state (hidden) */
+.feast-subtitle,
+.feast-title,
+.feast-divider {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease-out;
+}
+
+/* Jab container active hota hai, to elements ek ke baad ek aate hain */
+.reveal-up.active .feast-subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
+}
+
+.reveal-up.active .feast-title {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
+}
+
+.reveal-up.active .feast-divider {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.6s;
 }
 
 
@@ -83,11 +117,9 @@
         min-height: 70vh;
         background-attachment: scroll;
     }
-
     .feast-subtitle {
         font-size: 2.5rem;
     }
-
     .feast-title {
         font-size: 2rem;
     }
@@ -97,15 +129,12 @@
     .feast-section {
         min-height: 60vh;
     }
-
     .feast-subtitle {
         font-size: 2rem;
     }
-
     .feast-title {
         font-size: 1.6rem;
     }
-
     .feast-icon-img {
         width: 35px;
     }

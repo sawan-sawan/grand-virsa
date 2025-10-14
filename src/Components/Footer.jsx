@@ -36,9 +36,9 @@ const Footer = () => {
         {/* Column 3: Contact Info */}
         <div className="footer-col contact-col">
           <h3 className="footer-col-title">Contact Us</h3>
-          <p>123 Royal Street, Jalandhar, Punjab</p>
+          <p>NH 44 , GT Road , Phillaur , Punjab</p>
           <p>grandvirsa@gmail.com</p>
-          <p>+91 123 456 7890</p>
+          <p>+91 8078-000001</p>
         </div>
 
         {/* Column 4: Newsletter Subscription */}
