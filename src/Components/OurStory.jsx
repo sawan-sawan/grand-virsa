@@ -1,40 +1,63 @@
 import React from 'react';
 import './OurStory.css';
-import { FaArrowRight } from 'react-icons/fa';
+// रिसॉर्ट और फ़ूड थीम के लिए नए आइकन्स
+import { IoRestaurantOutline, IoBedOutline, IoLeafOutline } from 'react-icons/io5';
 
 const OurStory = () => {
+  // रिसॉर्ट और फ़ूड से संबंधित नया फ़ीचर डेटा
+  const features = [
+    {
+      icon: <IoRestaurantOutline />,
+      title: 'Gourmet Dining',
+      description: 'Savor exquisite dishes prepared by our master chefs using fresh, locally-sourced ingredients.'
+    },
+    {
+      icon: <IoBedOutline />,
+      title: 'Luxurious Stays',
+      description: 'Relax in our elegantly designed rooms and suites, each offering stunning views and premium comfort.'
+    },
+    {
+      icon: <IoLeafOutline />,
+      title: 'Natural Serenity',
+      description: 'Escape the everyday and immerse yourself in the tranquil beauty of our lush, natural surroundings.'
+    }
+  ];
+
   return (
     <section id='our-story' className="our-story-section-new">
-      <div className="story-left-column">
-        <div className="story-top-accent"></div>
-        <h1 className="story-main-title">Our Story</h1>
-        <div className="story-dots">
-          {[...Array(9)].map((_, i) => <span key={i}></span>)}
+      <div className="story-container">
+        {/* Left Column for the Image */}
+        <div className="story-image-wrapper">
+          <img 
+            src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760437913/Untitled_design_2_fa35km.png" 
+            alt="Resort Dining View" 
+            className="story-main-image" 
+          />
         </div>
-        <div className="mission-statement">
-          <h2><span className="icon-circle"><FaArrowRight /></span>Mission Statement</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div className="story-features">
-          <div className="feature-item">
-            <div className="feature-title"><span className="icon-circle"><FaArrowRight /></span>Family Recipes</div>
-            <span className="feature-number">100</span>
+
+        {/* Right Column for the Content */}
+        <div className="story-content-wrapper">
+          <div className="story-header">
+            <h1 className="story-main-title">Our Story</h1>
+            <p className="story-subtitle">
+              Discover a place where luxury meets nature, and every meal is a celebration of local tastes and culinary artistry.
+            </p>
           </div>
-          <div className="feature-item">
-            <div className="feature-title"><span className="icon-circle"><FaArrowRight /></span>Farm-to-Table</div>
-            <span className="feature-number">50</span>
+          
+          <div className="story-features-section">
+           
+            <div className="features-list">
+              {features.map((feature, index) => (
+                <div className="feature-item-new" key={index}>
+                  <div className="feature-icon">{feature.icon}</div>
+                  <div className="feature-text">
+                    <h3 className="feature-title-new">{feature.title}</h3>
+                    <p className="feature-description">{feature.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="feature-item">
-            <div className="feature-title"><span className="icon-circle"><FaArrowRight /></span>Cultural Heritage</div>
-            <span className="feature-number">20</span>
-          </div>
-        </div>
-      </div>
-      <div className="story-right-column">
-        <div className="story-image-collage">
-          <img src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384702/storyimg1_dtyrwo.png" alt="Restaurant Interior" className="collage-img-1" />
-          <img src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384692/storyimg2_g3oyg4.png" alt="Chef with burger" className="collage-img-2" />
-          <div className="story-bottom-accent"></div>
         </div>
       </div>
     </section>

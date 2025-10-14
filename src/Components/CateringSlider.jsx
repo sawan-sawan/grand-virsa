@@ -28,14 +28,14 @@ const CateringSlider = () => {
       description: 'Planning an important business meeting with your partners? Impress them with lunch in Royal Plate. Royal Plate covers everything from business lunches, to custom team building programs and corporate parties.'
     },
     {
-      image: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384696/catering_2_pdd9dm.jpg',
+      image: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760436446/imgi_27_murthal2_y0lnwi.jpg',
       subtitle: 'Catering',
       title: 'PRIVATE EVENTS',
       points: ['Birthdays', 'Family reunion', 'Or just because'],
       description: 'Whether you are celebrating your birthday, have a family reunion or something else, we’ll make it enjoying and memorable. Our experts have years of experience in party planning and will make sure it is a delicious success.'
     },
     {
-      image: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384699/catering_3_bxl4yc.jpg',
+      image: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760436446/imgi_35_murthal6_mwqfuy.jpg',
       subtitle: 'Catering',
       title: 'SPECIAL OCCASIONS',
       points: ['Weddings', 'Anniversaires', 'Baby showers'],

@@ -11,29 +11,29 @@
 .offers-container {
   display: flex;
   gap: 60px;
-  /* दोनों कॉलम के बीच में जगह */
   align-items: center;
 }
 
-/* --- Left Column: Image Collage --- */
-.offers-image-collage {
+/* --- Left Column: Single Image (UPDATED) --- */
+.offer-main-image-wrapper {
   flex: 1.2;
-  /* इमेज वाले हिस्से को थोड़ी ज़्यादा जगह दें */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px;
 }
 
-.offers-image-collage img {
-  width: 23vw;
-  height: 30vh;
-  object-fit: cover;
+/* इमेज के लिए नई स्टाइल */
+.offer-main-image {
+  width: 100%;
+  height: 75vh; /* आपकी ज़रूरत के अनुसार ऊंचाई 75vh कर दी गई है */
+  object-fit: cover; /* यह इमेज को बिना बिगाड़े कंटेनर में फिट करेगा */
+  border-radius: 10px;
+  padding: 1px 1px 1px 1px ;
+  border: 1px solid #DAA520;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Right Column: Content --- */
+
+/* --- Right Column: Content (No changes here) --- */
 .offers-content {
   flex: 1;
-  /* कंटेंट वाले हिस्से को थोड़ी कम जगह दें */
 }
 
 .offers-subtitle {
@@ -68,15 +68,13 @@
 .offer-item {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  /* आइटम्स के बीच में लाइन */
+  border-bottom: 1px solid rgba(238, 238, 238, 0.2);
   padding-bottom: 20px;
   margin-bottom: 20px;
 }
 
 .offer-item:last-child {
   border-bottom: none;
-  /* आखिरी आइटम के नीचे लाइन न हो */
   margin-bottom: 0;
 }
 
@@ -90,7 +88,6 @@
 
 .offer-details {
   flex-grow: 1;
-  /* बीच के हिस्से को पूरी जगह दें */
 }
 
 .offer-details h4 {
@@ -120,34 +117,29 @@
 @media (max-width: 992px) {
   .offers-container {
     flex-direction: column;
-    /* लेआउट को एक के नीचे एक कर दें */
     gap: 50px;
   }
+  
+  .offer-main-image-wrapper {
+      width: 100%;
+      max-width: 500px; 
+  }
 
-  .offers-image-collage img {
-    width: 44vw;
-    height: 30vh;
-    object-fit: cover;
+  /* टैबलेट पर इमेज की ऊंचाई कम की गई है ताकि लेआउट सही दिखे */
+  .offer-main-image {
+    height: 50vh; 
   }
 }
 
 @media (max-width: 480px) {
-  .offers-image-collage {
-    gap: 10px;
-  }
-
   .offer-item {
     flex-wrap: wrap;
-    /* छोटी स्क्रीन पर कीमत को नीचे ले जाएं */
   }
 
   .offer-details {
     flex-basis: 100%;
-    /* डिटेल्स को पूरी चौड़ाई दें */
     margin-top: 15px;
-    /* ऊपर से थोड़ी जगह */
     order: 3;
-    /* इसे सबसे नीचे रखें */
   }
 
   .offer-thumb {
@@ -157,6 +149,10 @@
   .offer-price {
     order: 2;
     margin-left: auto;
-    /* कीमत को दाईं ओर धकेलें */
+  }
+  
+  /* मोबाइल पर इमेज की ऊंचाई और कम की गई है */
+  .offer-main-image {
+    height: 40vh;
   }
 }

@@ -1,229 +1,184 @@
 /* src/components/OurStory.css */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
 
+/* Main section styling - Keeping your background */
 .our-story-section-new {
-    display: flex;
-    color: #fff;
-    overflow: hidden;
-    min-height: 90vh;
-    background-image: url('/img/storybg.jpg');
-    background-size: cover;
-    background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  padding: 60px 20px;
+  color: #fff;
+  background-image: url('/img/storybg.jpg'); /* Your original background */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.story-left-column {
-    flex: 1;
-    padding: 80px 6%;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: rgba(0, 0, 0, 0.4);
+/* Add a dark overlay to ensure text is readable */
+.our-story-section-new::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65); /* Dark overlay */
+  z-index: 1;
 }
 
-.story-top-accent {
-    position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, #DAA520, transparent);
+/* Main container for the content */
+.story-container {
+  display: flex;
+  align-items: center;
+  gap: 100px; /* Increased gap slightly for better separation */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
+/* Left Column: Image Wrapper - ADJUSTED */
+.story-image-wrapper {
+  flex: 0 0 40%; /* Image will take exactly 40% width */
+  max-width: 40%;
+}
+
+.story-main-image {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* Right Column: Content Wrapper - ADJUSTED */
+.story-content-wrapper {
+  flex: 1; /* Content will take the remaining space */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Text */
 .story-main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5rem;
-    color: #DAA520;
-    margin-bottom: 20px;
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  color: #DAA520;
+  margin-bottom: 15px;
 }
 
-.story-dots {
-    display: grid;
-    grid-template-columns: repeat(3, 8px);
-    gap: 4px;
-    margin-bottom: 40px;
+.story-subtitle {
+  font-family: 'Lato', sans-serif;
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 30px; /* Reduced margin */
 }
 
-.story-dots span {
-    width: 4px;
-    height: 4px;
-    background-color: #DAA520;
-    border-radius: 50%;
-    opacity: 0.7;
+/* Features Section */
+.features-title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
-.mission-statement h2,
-.feature-title {
-    display: flex;
-    align-items: center;
-    font-family: 'Lato', sans-serif;
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 15px;
+.features-intro {
+  font-family: 'Lato', sans-serif;
+  color: #ccc;
+  margin-bottom: 25px; /* Reduced margin */
 }
 
-.icon-circle {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 28px;
-    height: 28px;
-    border: 1px solid #DAA520;
-    border-radius: 50%;
-    margin-right: 15px;
-    font-size: 0.8rem;
-    color: #DAA520;
+/* List of all features */
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Reduced gap between feature items */
 }
 
-.mission-statement p {
-    font-family: 'Lato', sans-serif;
-    color: #ccc;
-    line-height: 1.8;
-    padding-left: 43px;
-    margin-bottom: 40px;
+/* Single feature item */
+.feature-item-new {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.story-features {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 30px;
+.feature-icon {
+  font-size: 1.8rem;
+  color: #DAA520;
+  margin-top: 15px;
 }
 
-.feature-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+.feature-title-new {
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 5px;
 }
 
-.feature-number {
-    font-family: 'Lato', sans-serif;
-    font-weight: 700;
-    color: #DAA520;
-    font-size: 1.2rem;
+.feature-description {
+  font-family: 'Lato', sans-serif;
+  color: #ccc;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
-.story-right-column {
-    flex: 1.2;
-    position: relative;
-}
-
-.story-image-collage {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.collage-img-1,
-.collage-img-2 {
-    position: absolute;
-    object-fit: cover;
-    box-shadow: -10px 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.collage-img-1 {
-    width: 40%;
-  
-    top: 7%;
-    right: 10%;
-    z-index: 2;
-    border: 1px solid #DAA520;
-    border-radius: 12px;
-}
-
-.collage-img-2 {
-    width: 43%;
-
-    bottom: 5%;
-    left: 5%;
-    border: 1px solid #DAA520;
-    border-radius: 12px;
-    z-index: 1;
-}
-
-.story-bottom-accent {
-    position: absolute;
-    bottom: 20px;
-    right: -20px;
-    width: 150px;
-    height: 150px;
-    border: 2px solid #DAA520;
-    transform: rotate(45deg);
-    opacity: 0.3;
-}
 
 /* --- Responsive Design --- */
 @media (max-width: 992px) {
-    .our-story-section-new {
-        flex-direction: column;
-    }
+  .story-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
 
-    .story-right-column {
-        display: none;
-    }
+  .story-image-wrapper,
+  .story-content-wrapper {
+    max-width: 100%;
+    flex: 1; /* Reset flex property for stacking */
+  }
 
-    /* --- यहाँ मुख्य बदलाव हैं --- */
-    .story-image-collage {
-        height: 90%;
-        /* कंटेनर को हाइट दें */
-        width: 90%;
-        /* कंटेनर को विड्थ दें */
-    }
+  .story-main-image {
+    max-width: 450px; /* Control image size on tablets */
+    margin: 0 auto;
+  }
 
-    .collage-img-1,
-    .collage-img-2 {
-        position: relative;
-        /* Absolute से Relative करें */
-        width: 75%;
-        /* विड्थ एडजस्ट करें */
-        height: auto;
-        /* Absolute वाली पोजिशनिंग हटा दें */
-        top: auto;
-        left: auto;
-        right: auto;
-        bottom: auto;
-        display: block;
-    }
-
-    .collage-img-1 {
-        margin: 0 auto;
-        /* पहली इमेज को सेंटर करें */
-        z-index: 2;
-    }
-
-    .collage-img-2 {
-        margin: -35% auto 0 auto;
-        /* दूसरी इमेज को ऊपर खींचें और सेंटर करें */
-        z-index: 1;
-    }
-
-    .story-bottom-accent {
-        display: none;
-        /* मोबाइल पर एक्सेंट को छिपा दें */
-    }
+  .story-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .feature-item-new {
+    /* Keep feature text left-aligned on smaller screens for readability */
+    text-align: left;
+    max-width: 500px; /* Limit width for better centering */
+    margin: 0 auto;
+  }
 }
 
 @media (max-width: 576px) {
-    .story-left-column {
-        padding: 60px 5%;
-    }
+  .our-story-section-new {
+    padding: 40px 15px;
+  }
 
-    .story-main-title {
-        font-size: 2.8rem;
-    }
+  .story-main-title {
+    font-size: 2.2rem;
+  }
 
-    .story-right-column {
-        min-height: 400px;
-        /* मोबाइल पर हाइट और कम करें */
-    }
+  .features-title {
+    font-size: 1.5rem;
+  }
 
-    .collage-img-1,
-    .collage-img-2 {
-        width: 80%;
-        /* मोबाइल पर इमेज थोड़ी और बड़ी करें */
-    }
+  .feature-item-new {
+    gap: 15px;
+  }
 
-    .collage-img-2 {
-        margin-top: -40%;
-        /* ओवरलैप को थोड़ा और बढ़ाएं */
-    }
+  .feature-icon {
+    font-size: 1.5rem;
+  }
 }
