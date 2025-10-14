@@ -1,9 +1,12 @@
-// src/components/Navbar.js
-
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
-import { FaHome, FaInfoCircle, FaConciergeBell, FaImages, FaEnvelope } from 'react-icons/fa';
-// react-scroll का Link यहाँ से हटा दिया गया है
+
+// 🎯 Updated icons for better matching
+import { FaHome } from 'react-icons/fa';
+import { GiChefToque } from 'react-icons/gi'; // For "Our Story" (chef/restaurant story)
+import { MdRestaurantMenu } from 'react-icons/md'; // For "Menu"
+import { GiPartyPopper } from 'react-icons/gi'; // For "Catering"
+import { IoIosMail } from 'react-icons/io'; // For "Contact"
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,22 +32,21 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // --- 1. यह हमारा नया कस्टम स्क्रॉल फंक्शन है ---
+  // --- Smooth scroll to section ---
   const handleScrollTo = (e, targetId) => {
-    e.preventDefault(); // डिफ़ॉल्ट JUMP को रोकता है
+    e.preventDefault();
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      const navbarHeight = 90; // आपके Navbar की हाइट
+      const navbarHeight = 90;
       const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
 
       window.scrollTo({
         top: targetPosition,
-        behavior: 'smooth' // स्मूथ स्क्रॉल
+        behavior: 'smooth'
       });
     }
 
-    // मोबाइल मेनू को बंद करने के लिए
     if (isOpen) {
       toggleMenu();
     }
@@ -57,7 +59,10 @@ const Navbar = () => {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar-container">
           <a href="/" className="navbar-logo">
-            <img src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/logo_iogna6.png" alt="Grand Virsa Logo" />
+            <img 
+              src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/logo_iogna6.png" 
+              alt="Grand Virsa Logo" 
+            />
           </a>
 
           <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
@@ -66,31 +71,35 @@ const Navbar = () => {
             <div className="line line3"></div>
           </div>
           
-          {/* --- 2. यहाँ <a> टैग्स का इस्तेमाल किया गया है --- */}
+          {/* --- Navigation Menu --- */}
           <ul className={`nav-menu ${isOpen ? 'open' : ''}`}>
             <li className="nav-item">
               <a href="#home" className="nav-link" onClick={(e) => handleScrollTo(e, 'home')}>
                 <FaHome className="nav-icon" /> Home
               </a>
             </li>
+
             <li className="nav-item">
               <a href="#our-story" className="nav-link" onClick={(e) => handleScrollTo(e, 'our-story')}>
-                <FaInfoCircle className="nav-icon" /> Our Story
+                <GiChefToque className="nav-icon" /> Our Story
               </a>
             </li>
+
             <li className="nav-item">
               <a href="#menu" className="nav-link" onClick={(e) => handleScrollTo(e, 'menu')}>
-                <FaConciergeBell className="nav-icon" /> Menu
+                <MdRestaurantMenu className="nav-icon" /> Menu
               </a>
             </li>
+
             <li className="nav-item">
               <a href="#catering" className="nav-link" onClick={(e) => handleScrollTo(e, 'catering')}>
-                <FaImages className="nav-icon" /> Catering
+                <GiPartyPopper className="nav-icon" /> Catering
               </a>
             </li>
+
             <li className="nav-item">
               <a href="#contact" className="nav-link contact-link" onClick={(e) => handleScrollTo(e, 'contact')}>
-                <FaEnvelope className="nav-icon" /> Contact
+                <IoIosMail className="nav-icon" /> Contact
               </a>
             </li>
           </ul>
