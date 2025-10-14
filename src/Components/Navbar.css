@@ -21,6 +21,7 @@
   background-color: rgba(10, 10, 10, 0.8);
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #DAA520;
 }
 
 .navbar-container {

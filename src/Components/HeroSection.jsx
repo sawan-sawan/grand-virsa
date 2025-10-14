@@ -1,8 +1,11 @@
 
 import React from 'react';
 import './HeroSection.css'; 
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const HeroSection = () => {
+  useScrollToTop();
+
   return (
     <section id='home' className="hero-section">
       
