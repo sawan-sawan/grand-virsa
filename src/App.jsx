@@ -11,13 +11,13 @@ import MenuPage from './Pages/MenuPage';
 function App() {
   return (
     <Router>
-      <Navbar />
+       <Navbar />
       <Routes>
         {/* --- Home Page --- */}
         <Route
           path="/"
           element={
-            <>
+            <>           
               <HeroSection />
               <OurStory />
               <FeastSection />
