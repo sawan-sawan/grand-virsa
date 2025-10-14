@@ -73,7 +73,7 @@
   text-decoration: none;
   padding: 0.5rem 1rem;
  font-family: 'Cinzel', serif;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 100;
   letter-spacing: 1px;
   position: relative;
@@ -279,7 +279,7 @@
   
   /* Change line color when scrolled */
   .navbar.scrolled .line {
-      background-color: #fff;
+      background-color: #DAA520;
   }
   
   /* When menu is open, hamburger lines are gold for visibility */
