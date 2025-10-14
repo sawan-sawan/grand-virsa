@@ -56,7 +56,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Overlay is now part of the nav-menu itself for a cleaner effect */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
         <div className="navbar-container">
           <a href="#home" className="navbar-logo" onClick={(e) => handleScrollTo(e, 'home')}>
@@ -66,44 +65,64 @@ const Navbar = () => {
             />
           </a>
 
+          {/* ===== NEW: DESKTOP MENU ===== */}
+          {/* Yeh menu sirf desktop par dikhega */}
+          <ul className="nav-menu-desktop">
+            <li className="nav-item-desktop">
+              <a href="#home" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'home')}>Home</a>
+            </li>
+            <li className="nav-item-desktop">
+              <a href="#our-story" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'our-story')}>Our Story</a>
+            </li>
+            <li className="nav-item-desktop">
+              <a href="#menu" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'menu')}>Menu</a>
+            </li>
+            <li className="nav-item-desktop">
+              <a href="#catering" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'catering')}>Catering</a>
+            </li>
+            <li className="nav-item-desktop">
+              <a href="#contact" className="nav-link-desktop contact-link-desktop" onClick={(e) => handleScrollTo(e, 'contact')}>Contact</a>
+            </li>
+          </ul>
+
           <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
             <div className="line line1"></div>
             <div className="line line2"></div>
             <div className="line line3"></div>
           </div>
           
-          {/* --- Navigation Menu (MODERNIZED) --- */}
+          {/* ===== MOBILE MENU ===== */}
+          {/* Yeh full-screen menu sirf mobile par toggle hoga */}
           <div className={`nav-menu-wrapper ${isOpen ? 'open' : ''}`}>
-            <ul className="nav-menu">
-              <li className="nav-item">
-                <a href="#home" className="nav-link" onClick={(e) => handleScrollTo(e, 'home')}>
+            <ul className="nav-menu-mobile">
+              <li className="nav-item-mobile">
+                <a href="#home" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'home')}>
                   <FaHome className="nav-icon" /> Home
                 </a>
               </li>
-         
-              <li className="nav-item">
-                <a href="#menu" className="nav-link" onClick={(e) => handleScrollTo(e, 'menu')}>
+             
+              <li className="nav-item-mobile">
+                <a href="#menu" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'menu')}>
                   <MdRestaurantMenu className="nav-icon" /> Menu
                 </a>
               </li>
-              <li className="nav-item">
-                <a href="#catering" className="nav-link" onClick={(e) => handleScrollTo(e, 'catering')}>
+              <li className="nav-item-mobile">
+                <a href="#catering" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'catering')}>
                   <GiPartyPopper className="nav-icon" /> Catering
                 </a>
               </li>
-                   <li className="nav-item">
-                <a href="#our-story" className="nav-link" onClick={(e) => handleScrollTo(e, 'our-story')}>
+               <li className="nav-item-mobile">
+                <a href="#our-story" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'our-story')}>
                   <GiChefToque className="nav-icon" /> Our Story
                 </a>
               </li>
-              <li className="nav-item">
-                <a href="#contact" className="nav-link" onClick={(e) => handleScrollTo(e, 'contact')}>
+              <li className="nav-item-mobile">
+                <a href="#contact" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'contact')}>
                   <IoIosMail className="nav-icon" /> Contact
                 </a>
               </li>
             </ul>
 
-            {/* --- NEW: CTA Button and Social Links --- */}
             <div className="nav-extras">
               <button className="nav-cta-button">Book a Table</button>
               <div className="nav-socials">

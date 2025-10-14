@@ -48,6 +48,7 @@
     margin-bottom: -100px;
     font-weight: 400;
     opacity: 0;
+    text-shadow: 2px 2px 4px rgb(223, 168, 0);
     animation: slideFadeIn 1.2s ease-out forwards;
 }
 
