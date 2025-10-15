@@ -83,14 +83,16 @@
     box-shadow: 0 12px 30px rgba(218, 165, 32, 0.3);
 }
 
+
 .menu-card-img {
-    width: 305px;
-    height: 200px;
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* image ka max size limit karega */
+    aspect-ratio: 4 / 3; /* uniform shape maintain karega */
     object-fit: cover;
-    align-items: center;
-    right: -12px;
-    position: relative;
-    padding: 23px;
+    display: block;
+    margin: 20px auto 0; /* image ko center karega horizontally */
+    border-radius: 10px;
 }
 
 .menu-card-body {
@@ -177,4 +179,8 @@
     .category-title {
         font-size: 1.5rem;
     }
+     .menu-card-img {
+    max-width: 90%;
+    aspect-ratio: 4 / 3;
+  }
 }
