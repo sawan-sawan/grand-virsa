@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'; // 'Back to Home' ke liye
 import './MenuPage.css';
 import { IoArrowBack } from "react-icons/io5";
 import { useScrollToTop } from "../hooks/useScrollToTop";
-import Footer from '../Components/Footer';
+
 
 // Sample menu data - Veg only, expanded categories
 const menuData = [
@@ -103,7 +103,6 @@ const MenuPage = () => {
 
             </div>
         </div>
-        <Footer />
        
        </>
     );

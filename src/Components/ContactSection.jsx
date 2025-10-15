@@ -2,8 +2,10 @@
 import React from 'react';
 import './ContactSection.css';
 import { FaEnvelope, FaGlobe, FaPhoneAlt } from 'react-icons/fa'; 
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const ContactSection = () => {
+  useScrollToTop();
   return (
     <section id='contact' className="contact-section">
       <div className="contact-image-column">

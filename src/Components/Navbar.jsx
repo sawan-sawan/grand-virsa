@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 // --- Icons ---
@@ -14,7 +15,7 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  
+
   // Body scroll lock logic
   useEffect(() => {
     if (isOpen) {
@@ -37,7 +38,7 @@ const Navbar = () => {
   const handleScrollTo = (e, targetId) => {
     e.preventDefault();
     const targetElement = document.getElementById(targetId);
-    
+
     if (targetElement) {
       const navbarHeight = 90;
       const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
@@ -58,68 +59,101 @@ const Navbar = () => {
     <>
       <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isOpen ? 'menu-open' : ''}`}>
         <div className="navbar-container">
-          <a href="#home" className="navbar-logo" onClick={(e) => handleScrollTo(e, 'home')}>
-            <img 
-              src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/logo_iogna6.png" 
-              alt="Grand Virsa Logo" 
+          <Link to="/" className="navbar-logo">
+            <img
+              src="https://res.cloudinary.com/dnyv7wabr/image/upload/v1760384695/logo_iogna6.png"
+              alt="Grand Virsa Logo"
             />
-          </a>
+          </Link>
 
           {/* ===== NEW: DESKTOP MENU ===== */}
           {/* Yeh menu sirf desktop par dikhega */}
           <ul className="nav-menu-desktop">
             <li className="nav-item-desktop">
-              <a href="#home" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'home')}>Home</a>
+              <Link
+                to="/"
+                className="nav-link-desktop"
+               
+              >
+                Home
+              </Link>
             </li>
             <li className="nav-item-desktop">
-              <a href="#our-story" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'our-story')}>Our Story</a>
+              <Link
+                to="/ourstory"
+                className="nav-link-desktop"
+               
+              >
+                Our Story
+              </Link>
             </li>
             <li className="nav-item-desktop">
-              <a href="#menu" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'menu')}>Menu</a>
+              <Link
+                to="/menu"
+                className="nav-link-desktop"
+              >
+                Menu
+              </Link>
             </li>
             <li className="nav-item-desktop">
-              <a href="#catering" className="nav-link-desktop" onClick={(e) => handleScrollTo(e, 'catering')}>Catering</a>
+              <Link
+                to="/catering"
+                className="nav-link-desktop"
+               
+              >
+                Catering
+              </Link>
             </li>
             <li className="nav-item-desktop">
-              <a href="#contact" className="nav-link-desktop contact-link-desktop" onClick={(e) => handleScrollTo(e, 'contact')}>Contact</a>
+              <Link
+                to="/contact"
+                className="nav-link-desktop contact-link-desktop"
+               
+              >
+                Contact
+              </Link>
             </li>
           </ul>
+
 
           <div className={`hamburger ${isOpen ? 'open' : ''}`} onClick={toggleMenu}>
             <div className="line line1"></div>
             <div className="line line2"></div>
             <div className="line line3"></div>
           </div>
-          
+
           {/* ===== MOBILE MENU ===== */}
           {/* Yeh full-screen menu sirf mobile par toggle hoga */}
           <div className={`nav-menu-wrapper ${isOpen ? 'open' : ''}`}>
             <ul className="nav-menu-mobile">
               <li className="nav-item-mobile">
-                <a href="#home" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'home')}>
+                <Link to="/" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
                   <FaHome className="nav-icon" /> Home
-                </a>
+                </Link>
               </li>
-             
+
               <li className="nav-item-mobile">
-                <a href="#menu" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'menu')}>
+                <Link to="/menu" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
                   <MdRestaurantMenu className="nav-icon" /> Menu
-                </a>
+                </Link>
               </li>
+
               <li className="nav-item-mobile">
-                <a href="#catering" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'catering')}>
+                <Link to="/catering" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
                   <GiPartyPopper className="nav-icon" /> Catering
-                </a>
+                </Link>
               </li>
-               <li className="nav-item-mobile">
-                <a href="#our-story" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'our-story')}>
-                  <GiChefToque className="nav-icon" /> Our Story
-                </a>
-              </li>
+
               <li className="nav-item-mobile">
-                <a href="#contact" className="nav-link-mobile" onClick={(e) => handleScrollTo(e, 'contact')}>
+                <Link to="/our-story" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
+                  <GiChefToque className="nav-icon" /> Our Story
+                </Link>
+              </li>
+
+              <li className="nav-item-mobile">
+                <Link to="/contact" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
                   <IoIosMail className="nav-icon" /> Contact
-                </a>
+                </Link>
               </li>
             </ul>
 

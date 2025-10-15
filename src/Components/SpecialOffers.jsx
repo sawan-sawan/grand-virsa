@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from "react-router-dom";
 import './SpecialOffers.css';
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const SpecialOffers = () => {
   const sectionRef = useRef(null);
@@ -23,7 +24,7 @@ const SpecialOffers = () => {
 
     return () => observer.disconnect();
   }, []);
-
+useScrollToTop();
   return (
     <section id="menu" className="offers-section" ref={sectionRef}>
       <div className={`offers-container reveal-up ${isVisible ? 'active' : ''}`}>

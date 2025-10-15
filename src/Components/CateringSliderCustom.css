@@ -1,0 +1,179 @@
+/* src/Components/CateringSliderCustom.css */
+
+.cat-slider-section {
+  padding: 100px 0;
+  background-color: #0c0c0c;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cat-slider-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Header Styling --- */
+.cat-slider-header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 20px;
+}
+
+.cat-slider-subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: #DAA520;
+  margin: 0;
+}
+
+.cat-slider-title {
+  font-family: 'Cinzel', serif;
+  font-size: 2.2rem;
+  letter-spacing: 3px;
+  color: #ffffff;
+  margin: 10px 0;
+  text-transform: uppercase;
+}
+
+.title-dot-cat-slider {
+  width: 8px;
+  height: 8px;
+  background-color: #DAA520;
+  border-radius: 50%;
+  margin: 20px auto 0;
+}
+
+/* --- Custom Slider Core Styles --- */
+.cat-slider-wrapper {
+  position: relative;
+}
+
+.cat-slider-viewport {
+  display: flex;
+  overflow-x: auto;
+  /* Yeh smooth snapping ke liye zaroori hai */
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; /* iOS par smooth scroll ke liye */
+  scrollbar-width: none; /* Firefox mein scrollbar chhupane ke liye */
+  padding-bottom: 20px; /* Neeche thoda space */
+}
+/* Webkit browsers mein scrollbar chhupane ke liye */
+.cat-slider-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-slider-slide {
+  flex: 0 0 90%; /* Mobile par ek slide ka 90% dikhega */
+  max-width: 90%;
+  padding: 0 10px;
+  /* Har slide center mein snap karegi */
+  scroll-snap-align: center;
+}
+
+/* --- Card Styling --- */
+.cat-slider-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 450px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+.cat-slider-card:hover {
+  transform: scale(1.02);
+}
+
+.cat-slider-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.cat-slider-card:hover .cat-slider-card-img {
+    transform: scale(1.1);
+}
+
+.cat-slider-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40px 25px 25px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+.cat-slider-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: 1.6rem;
+  color: #DAA520;
+  margin: 0 0 10px 0;
+}
+
+.cat-slider-card-desc {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #f0f0f0;
+}
+
+/* --- Arrow Buttons Styling --- */
+.cat-slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cat-slider-arrow:hover {
+  background-color: #DAA520;
+  color: #111;
+}
+.cat-slider-arrow-left { left: 20px; }
+.cat-slider-arrow-right { right: 20px; }
+
+
+/* --- Scroll Reveal Animation --- */
+.cat-slider-container.reveal-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+.cat-slider-container.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* --- Responsive Design --- */
+/* Tablet */
+@media (min-width: 640px) {
+  .cat-slider-slide {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .cat-slider-slide {
+    flex-basis: 33.33%;
+    max-width: 33.33%;
+  }
+}
+
+/* Hide arrows on very small screens */
+@media (max-width: 768px) {
+    .cat-slider-arrow {
+        display: none;
+    }
+}

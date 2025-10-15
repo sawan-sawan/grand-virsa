@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './OurStory.css';
 import { IoRestaurantOutline, IoBedOutline, IoLeafOutline } from 'react-icons/io5';
+import { useScrollToTop } from "../hooks/useScrollToTop";
 
 const OurStory = () => {
   const sectionRef = useRef(null);
@@ -44,7 +45,7 @@ const OurStory = () => {
 
     return () => observer.disconnect();
   }, []);
-
+useScrollToTop();
   return (
     <section
       id="our-story"
