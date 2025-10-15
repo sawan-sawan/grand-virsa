@@ -10,8 +10,8 @@ const menuData = [
     {
         category: 'Appetizers',
         items: [
-            { name: 'Paneer Tikka', price: '₹280', desc: 'Marinated cottage cheese grilled to perfection.', img: '/public/img/pneertika.png' },
-            { name: 'Vegetable Spring Roll', price: '₹200', desc: 'Crispy rolls stuffed with mixed veggies.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525169/34dc97db0fa8c512134b823431d95714_b6jeqm.png' },
+            { name: 'Paneer Tikka', price: '₹280', desc: 'Marinated cottage cheese grilled to perfection.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760528791/pneertika_optimized_250_z7gqie.png' },
+            { name: 'Vegetable Spring Roll', price: '₹200', desc: 'Crispy rolls stuffed with mixed veggies.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760528895/34dc97db0fa8c512134b823431d95714_optimized_200_hot5do.png' },
             { name: 'Corn Chaat', price: '₹180', desc: 'Sweet corn tossed with spices and lemon.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525495/mixed-salad-with-avocado-tomatoes-sweet-corn_ylrppq.jpg' },
         ]
     },
@@ -19,7 +19,7 @@ const menuData = [
         category: 'Main Course',
         items: [
             { name: 'Dal Makhani', price: '₹350', desc: 'Creamy black lentils cooked overnight.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525585/freshly-cooked-vegetarian-pumpkin-soup-with-cilantro-garnish-generated-by-ai_vge2su.jpg' },
-            { name: 'Shahi Paneer', price: '₹380', desc: 'Cottage cheese in a rich, creamy tomato gravy.', img: '/public/img/paner.jpg' },
+            { name: 'Shahi Paneer', price: '₹380', desc: 'Cottage cheese in a rich, creamy tomato gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760529048/paner_1_optimized_200_wxheia.jpg' },
             { name: 'Veg Kofta', price: '₹360', desc: 'Vegetable balls in creamy cashew gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526003/view-ready-eat-delicious-meal-go_v9dk9o.jpg' },
             { name: 'Mixed Veg Curry', price: '₹330', desc: 'Seasonal vegetables cooked with aromatic spices.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526128/pre-prepared-food-showcasing-ready-eat-delicious-meals-go_pjjw41.jpg' },
             { name: 'Paneer Butter Masala', price: '₹400', desc: 'Paneer cubes in buttery tomato gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526262/pre-prepared-food-showcasing-ready-eat-delicious-meals-go_1_idpmii.jpg' },
@@ -44,9 +44,9 @@ const menuData = [
     {
         category: 'Drinks',
         items: [
-            { name: 'Fresh Lime Soda', price: '₹90', desc: 'Refreshing lime soda with mint.', img: '/public/img/lemonsoda.jpg' },
+            { name: 'Fresh Lime Soda', price: '₹90', desc: 'Refreshing lime soda with mint.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760529173/lemonsoda_optimized_200_eg61nk.jpg' },
             { name: 'Mango Lassi', price: '₹120', desc: 'Sweet mango yogurt drink.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760527384/delicious-mango-still-life_ug5nqw.jpg' },
-            { name: 'Masala Chai', price: '₹60', desc: 'Traditional spiced tea.', img: '/public/img/masalachai.jpg' },
+            { name: 'Masala Chai', price: '₹60', desc: 'Traditional spiced tea.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760529247/masalachai_optimized_200_pd7yfy.jpg' },
         ]
     },
     {
