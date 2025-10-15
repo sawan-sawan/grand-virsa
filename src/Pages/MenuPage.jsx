@@ -38,23 +38,23 @@ const menuData = [
         items: [
             { name: 'Green Salad', price: '₹150', desc: 'Fresh greens with olive oil dressing.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526730/erasebg-transformed_1_qddbd6.png' },
             { name: 'Fruit Salad', price: '₹160', desc: 'Seasonal fruits served fresh.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526873/Pngtree_healthy_rainbow_fruit_salad_with_19675368_d0pqev.png' },
-            { name: 'Greek Salad', price: '₹170', desc: 'Veggies with feta cheese and olives.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465238/greek-salad.jpg' },
+            { name: 'Greek Salad', price: '₹170', desc: 'Veggies with feta cheese and olives.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760527079/Pngtree_a_full_greek_salad_9101590_hpipuk.png' },
         ]
     },
     {
         category: 'Drinks',
         items: [
-            { name: 'Fresh Lime Soda', price: '₹90', desc: 'Refreshing lime soda with mint.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465239/fresh-lime-soda.jpg' },
-            { name: 'Mango Lassi', price: '₹120', desc: 'Sweet mango yogurt drink.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465240/mango-lassi.jpg' },
-            { name: 'Masala Chai', price: '₹60', desc: 'Traditional spiced tea.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465241/masala-chai.jpg' },
+            { name: 'Fresh Lime Soda', price: '₹90', desc: 'Refreshing lime soda with mint.', img: '/public/img/lemonsoda.jpg' },
+            { name: 'Mango Lassi', price: '₹120', desc: 'Sweet mango yogurt drink.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760527384/delicious-mango-still-life_ug5nqw.jpg' },
+            { name: 'Masala Chai', price: '₹60', desc: 'Traditional spiced tea.', img: '/public/img/masalachai.jpg' },
         ]
     },
     {
         category: 'Desserts',
         items: [
-            { name: 'Gulab Jamun', price: '₹120', desc: 'Soft milk dumplings in sugar syrup.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465242/gulab-jamun.jpg' },
-            { name: 'Rasmalai', price: '₹150', desc: 'Soft paneer patties in sweetened milk.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465243/rasmalai.jpg' },
-            { name: 'Chocolate Brownie', price: '₹180', desc: 'Rich chocolate brownie with nuts.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465244/chocolate-brownie.jpg' },
+            { name: 'Gulab Jamun', price: '₹120', desc: 'Soft milk dumplings in sugar syrup.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760528161/Screenshot_2025-10-14_170652_u80kd9.png' },
+            { name: 'Rasmalai', price: '₹150', desc: 'Soft paneer patties in sweetened milk.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760528291/Screenshot_2025-10-14_170952_pwteko.png' },
+            { name: 'Chocolate Brownie', price: '₹180', desc: 'Rich chocolate brownie with nuts.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760528369/ella-olsson-uG1jwfpCRhg-unsplash_lgcyx0.jpg' },
         ]
     },
 ];
