@@ -10,35 +10,34 @@ const menuData = [
     {
         category: 'Appetizers',
         items: [
-            { name: 'Paneer Tikka', price: '₹280', desc: 'Marinated cottage cheese grilled to perfection.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465227/paneer-tikka_g6d8pl.jpg' },
-            { name: 'Hara Bhara Kebab', price: '₹250', desc: 'Spinach and vegetable patties, deep-fried.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465225/hara-bhara-kebab_c6kffh.jpg' },
-            { name: 'Vegetable Spring Roll', price: '₹200', desc: 'Crispy rolls stuffed with mixed veggies.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465230/veg-spring-roll.jpg' },
-            { name: 'Corn Chaat', price: '₹180', desc: 'Sweet corn tossed with spices and lemon.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465231/corn-chaat.jpg' },
+            { name: 'Paneer Tikka', price: '₹280', desc: 'Marinated cottage cheese grilled to perfection.', img: '/public/img/pneertika.png' },
+            { name: 'Vegetable Spring Roll', price: '₹200', desc: 'Crispy rolls stuffed with mixed veggies.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525169/34dc97db0fa8c512134b823431d95714_b6jeqm.png' },
+            { name: 'Corn Chaat', price: '₹180', desc: 'Sweet corn tossed with spices and lemon.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525495/mixed-salad-with-avocado-tomatoes-sweet-corn_ylrppq.jpg' },
         ]
     },
     {
         category: 'Main Course',
         items: [
-            { name: 'Dal Makhani', price: '₹350', desc: 'Creamy black lentils cooked overnight.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465223/dal-makhani_y4j7sa.jpg' },
-            { name: 'Shahi Paneer', price: '₹380', desc: 'Cottage cheese in a rich, creamy tomato gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465229/shahi-paneer_w2z9vj.jpg' },
-            { name: 'Veg Kofta', price: '₹360', desc: 'Vegetable balls in creamy cashew gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465232/veg-kofta.jpg' },
-            { name: 'Mixed Veg Curry', price: '₹330', desc: 'Seasonal vegetables cooked with aromatic spices.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465233/mixed-veg-curry.jpg' },
-            { name: 'Paneer Butter Masala', price: '₹400', desc: 'Paneer cubes in buttery tomato gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465234/paneer-butter-masala.jpg' },
+            { name: 'Dal Makhani', price: '₹350', desc: 'Creamy black lentils cooked overnight.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760525585/freshly-cooked-vegetarian-pumpkin-soup-with-cilantro-garnish-generated-by-ai_vge2su.jpg' },
+            { name: 'Shahi Paneer', price: '₹380', desc: 'Cottage cheese in a rich, creamy tomato gravy.', img: '/public/img/paner.jpg' },
+            { name: 'Veg Kofta', price: '₹360', desc: 'Vegetable balls in creamy cashew gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526003/view-ready-eat-delicious-meal-go_v9dk9o.jpg' },
+            { name: 'Mixed Veg Curry', price: '₹330', desc: 'Seasonal vegetables cooked with aromatic spices.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526128/pre-prepared-food-showcasing-ready-eat-delicious-meals-go_pjjw41.jpg' },
+            { name: 'Paneer Butter Masala', price: '₹400', desc: 'Paneer cubes in buttery tomato gravy.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526262/pre-prepared-food-showcasing-ready-eat-delicious-meals-go_1_idpmii.jpg' },
         ]
     },
     {
         category: 'Breads',
         items: [
-            { name: 'Garlic Naan', price: '₹80', desc: 'Soft leavened bread with garlic and butter.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465224/garlic-naan_y1xmqp.jpg' },
-            { name: 'Lachha Paratha', price: '₹70', desc: 'Crispy, multi-layered whole wheat bread.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465226/lachha-paratha_qxq0zw.jpg' },
-            { name: 'Butter Naan', price: '₹60', desc: 'Soft naan brushed with butter.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465235/butter-naan.jpg' },
+            { name: 'Garlic Naan', price: '₹80', desc: 'Soft leavened bread with garlic and butter.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526344/pakistani-food-wooden-board-top-view_flhue2.jpg' },
+            { name: 'Lachha Paratha', price: '₹70', desc: 'Crispy, multi-layered whole wheat bread.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526487/609c8fcab82b7dffebaf4041b456ad7c_msn0y4.jpg' },
+            { name: 'Butter Naan', price: '₹60', desc: 'Soft naan brushed with butter.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526623/Homemade-Naan-Bread-Restaurant-Style-Vegan-16-1400x2100_bu3f3i.jpg' },
         ]
     },
     {
         category: 'Salads',
         items: [
-            { name: 'Green Salad', price: '₹150', desc: 'Fresh greens with olive oil dressing.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465236/green-salad.jpg' },
-            { name: 'Fruit Salad', price: '₹160', desc: 'Seasonal fruits served fresh.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465237/fruit-salad.jpg' },
+            { name: 'Green Salad', price: '₹150', desc: 'Fresh greens with olive oil dressing.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526730/erasebg-transformed_1_qddbd6.png' },
+            { name: 'Fruit Salad', price: '₹160', desc: 'Seasonal fruits served fresh.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760526873/Pngtree_healthy_rainbow_fruit_salad_with_19675368_d0pqev.png' },
             { name: 'Greek Salad', price: '₹170', desc: 'Veggies with feta cheese and olives.', img: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760465238/greek-salad.jpg' },
         ]
     },

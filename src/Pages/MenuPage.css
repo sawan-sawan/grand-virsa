@@ -2,128 +2,133 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cinzel:wght@400;700&family=Lato&display=swap');
 
 .menu-page-section {
-  padding: 140px 6% 80px;
-  background-image: url('/img/menubg.jpg'); /* Same background as offers */
-  background-size: cover;
-  background-position: center;
-  color: #fff;
-  min-height: 100vh;
+    padding: 140px 6% 80px;
+    background-image: url('/img/menubg.jpg');
+    /* Same background as offers */
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    min-height: 100vh;
 }
 
 .menu-page-container {
-  max-width: 1200px;
-  margin: 0 auto;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .menu-header {
-  text-align: center;
-  margin-bottom: 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
 
 .menu-subtitle {
-  font-family: 'Great Vibes', cursive;
-  font-size: 3rem;
-  color: #DAA520;
-  margin: 0;
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    color: #DAA520;
+    margin: 0;
 }
 
 .menu-title {
-  font-family: 'Cinzel', serif;
-  font-size: 2.2rem;
-  letter-spacing: 3px;
-  color: #ffffff;
-  margin: 10px 0;
-  text-transform: uppercase;
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin: 10px 0;
+    text-transform: uppercase;
 }
 
 .title-dot-menu {
-  width: 8px;
-  height: 8px;
-  background-color: #DAA520;
-  border-radius: 50%;
-  margin: 20px auto 0;
+    width: 8px;
+    height: 8px;
+    background-color: #DAA520;
+    border-radius: 50%;
+    margin: 20px auto 0;
 }
 
 /* --- Category Styling --- */
 .menu-category {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
 }
 
 .category-title {
-  font-family: 'Cinzel', serif;
-  font-size: 1.8rem;
-  color: #DAA520;
-  text-align: center;
-  margin-bottom: 40px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(218, 165, 32, 0.3);
-  display: inline-block;
-  letter-spacing: 2px;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
+    color: #DAA520;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(218, 165, 32, 0.3);
+    display: inline-block;
+    letter-spacing: 2px;
 }
 
 /* --- Menu Grid & Card Styling --- */
 .menu-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
 }
 
 .menu-card {
-  background-color: rgba(10, 10, 10, 0.7);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(10, 10, 10, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(218, 165, 32, 0.3);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(218, 165, 32, 0.3);
 }
 
 .menu-card-img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
+    width: 305px;
+    height: 200px;
+    object-fit: cover;
+    align-items: center;
+    right: -12px;
+    position: relative;
+    padding: 23px;
 }
 
 .menu-card-body {
-  padding: 20px;
+    padding: 20px;
 }
 
 .menu-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 15px;
-  border-bottom: 1px dashed rgba(218, 165, 32, 0.4);
-  padding-bottom: 10px;
-  margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    border-bottom: 1px dashed rgba(218, 165, 32, 0.4);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
 
 .menu-item-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.1rem;
-  color: #f0f0f0;
-  margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    color: #f0f0f0;
+    margin: 0;
 }
 
 .menu-item-price {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.1rem;
-  color: #DAA520;
-  font-weight: bold;
-  white-space: nowrap;
-  margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.1rem;
+    color: #DAA520;
+    font-weight: bold;
+    white-space: nowrap;
+    margin: 0;
 }
 
 .menu-item-desc {
-  font-family: 'Lato', sans-serif;
-  font-size: 0.9rem;
-  color: #ccc;
-  line-height: 1.6;
-  margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: #ccc;
+    line-height: 1.6;
+    margin: 0;
 }
 
 /* --- Back to Home Button --- */
@@ -161,13 +166,15 @@
 
 /* --- Responsive Design --- */
 @media (max-width: 768px) {
-  .menu-page-section {
-    padding: 120px 4% 60px;
-  }
-  .menu-title {
-    font-size: 1.8rem;
-  }
-  .category-title {
-      font-size: 1.5rem;
-  }
+    .menu-page-section {
+        padding: 120px 4% 60px;
+    }
+
+    .menu-title {
+        font-size: 1.8rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
 }

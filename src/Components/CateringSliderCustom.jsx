@@ -8,22 +8,22 @@ const cateringEvents = [
   {
     title: 'Grand Weddings',
     description: 'Aapke khaas din ke liye shaahi khaane ka anubhav, jise aapke mehman hamesha yaad rakhenge.',
-    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760469850/wedding-catering_lqlz8r.jpg'
+    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760436446/imgi_35_murthal6_mwqfuy.jpg'
   },
   {
     title: 'Corporate Functions',
     description: 'Aapke business meetings, seminars, aur parties ke liye professional catering services.',
-    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760469849/corporate-event_u9t3sa.jpg'
+    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760436446/imgi_27_murthal2_y0lnwi.jpg'
   },
   {
     title: 'Kitty Parties',
     description: 'Aapki social gatherings ke liye lazeez snacks aur mocktails, ek shaandaar mahaul ke saath.',
-    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760469849/kitty-party_u5tpsh.jpg'
+    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760524548/pexels-justin-agyarko-3845782-34278805_lsqefc.jpg'
   },
   {
     title: 'Birthday Parties',
     description: 'Custom menu aur themed cakes ke saath jashn manayein, jo har umar ke logon ko pasand aayega.',
-    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760469848/birthday-party_c0lq8x.jpg'
+    imgSrc: 'https://res.cloudinary.com/dnyv7wabr/image/upload/v1760524653/pexels-justin-agyarko-3845782-34278820_qrukou.jpg'
   }
 ];
 
