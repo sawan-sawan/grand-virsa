@@ -1,0 +1,104 @@
+/* Basic Reset aur Font apply karna */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Yeh .error-body class humare React component ke main div par lagegi
+  taaki content poori screen par center ho sake.
+*/
+.error-body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Screen ki poori height le */
+    width: 100%;
+    padding: 20px; /* Chhote screens par side mein thodi jagah */
+}
+
+/* Main Error Container */
+.error-container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    max-width: 500px; /* Ek maximum width set karein */
+    width: 100%; /* Default mein poori available width le */
+}
+
+/* Error Code '404' ki styling */
+.error-code {
+    font-size: 120px;
+    font-weight: 700;
+    color: #4a90e2; /* Ek accha sa blue color */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Error Message 'Oops!...' ki styling */
+.error-message {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+/* Description paragraph ki styling */
+.error-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* 'Home Page' button ki styling */
+.home-button {
+    display: inline-block;
+    background-color: #4a90e2;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 12px 30px;
+    border-radius: 50px; /* Pill shape button */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Button par hover (mouse le jaane par) effect */
+.home-button:hover {
+    background-color: #357abd;
+    transform: translateY(-2px); /* Halksa upar uthe */
+}
+
+/* ================================== */
+/* 📱 RESPONSIVE DESIGN (Media Query) */
+/* ================================== */
+
+@media (max-width: 480px) {
+    
+    .error-container {
+        padding: 25px; /* Mobile par padding kam karein */
+    }
+
+    .error-code {
+        font-size: 80px; /* Font size chhota karein */
+    }
+
+    .error-message {
+        font-size: 22px; /* Font size chhota karein */
+    }
+
+    .error-description {
+        font-size: 14px; /* Font size chhota karein */
+    }
+
+    .home-button {
+        font-size: 14px;
+        padding: 10px 25px; /* Button bhi thoda chhota karein */
+    }
+}
