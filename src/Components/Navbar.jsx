@@ -145,7 +145,7 @@ const Navbar = () => {
               </li>
 
               <li className="nav-item-mobile">
-                <Link to="/our-story" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
+                <Link to="/ourstory" className="nav-link-mobile" onClick={() => isOpen && toggleMenu()}>
                   <GiChefToque className="nav-icon" /> Our Story
                 </Link>
               </li>
