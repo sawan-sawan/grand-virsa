@@ -9,27 +9,26 @@ import Footer from './Components/Footer';
 
 import MenuPage from './Pages/MenuPage';
 import CateringSliderCustom from './Components/CateringSliderCustom';
-import ErrorPage from './Components/ErrorPage';
+
 
 function App() {
   return (
     <Router>
-      {/* <Navbar /> */}
+     <Navbar />
       <Routes>
         {/* --- Home Page --- */}
         <Route
           path="/"
           element={
             <>
-            <ErrorPage />
-              {/*
+          
+              
   <HeroSection />
   <OurStory />
   <FeastSection />
   <SpecialOffers />
   <CateringSliderCustom />
   <ContactSection />
-*/}
 
             </>
           }
@@ -43,7 +42,7 @@ function App() {
 
 
       </Routes>
-     {/* <Footer /> */}
+     <Footer /> 
     </Router>
   );
 }
