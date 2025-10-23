@@ -6,7 +6,7 @@ import FeastSection from './Components/FeastSection';
 import SpecialOffers from './Components/SpecialOffers';
 import ContactSection from './Components/ContactSection';
 import Footer from './Components/Footer';
-
+import ErrorPage from './Components/ErrorPage';
 import MenuPage from './Pages/MenuPage';
 import CateringSliderCustom from './Components/CateringSliderCustom';
 
@@ -14,25 +14,27 @@ import CateringSliderCustom from './Components/CateringSliderCustom';
 function App() {
   return (
     <Router>
-     <Navbar />
+      <ErrorPage />
+      {/* <Navbar /> */}
       <Routes>
-        {/* --- Home Page --- */}
+        {/* 
         <Route
           path="/"
           element={
             <>
-          
-              
-  <HeroSection />
-  <OurStory />
-  <FeastSection />
-  <SpecialOffers />
-  <CateringSliderCustom />
-  <ContactSection />
+
+
+              <HeroSection />
+              <OurStory />
+              <FeastSection />
+              <SpecialOffers />
+              <CateringSliderCustom />
+              <ContactSection />
 
             </>
           }
         />
+        */}
 
         {/* --- Menu Page --- */}
         <Route path="/menu" element={<MenuPage />} />
@@ -42,7 +44,7 @@ function App() {
 
 
       </Routes>
-     <Footer /> 
+      {/* <Footer /> */}
     </Router>
   );
 }
