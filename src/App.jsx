@@ -14,10 +14,9 @@ import CateringSliderCustom from './Components/CateringSliderCustom';
 function App() {
   return (
     <Router>
-      <ErrorPage />
-      {/* <Navbar /> */}
+       <Navbar /> 
       <Routes>
-        {/* 
+        
         <Route
           path="/"
           element={
@@ -34,7 +33,7 @@ function App() {
             </>
           }
         />
-        */}
+        
 
         {/* --- Menu Page --- */}
         <Route path="/menu" element={<MenuPage />} />
@@ -44,7 +43,7 @@ function App() {
 
 
       </Routes>
-      {/* <Footer /> */}
+       <Footer /> 
     </Router>
   );
 }
